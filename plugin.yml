@@ -1,0 +1,52 @@
+name: Boostsecurity.io Scanner
+description: Scans a repository for vulnerabilities
+author: https://www.boostsecurity.io
+requirements:
+  - bash
+  - docker
+  - mktemp
+configuration:
+  properties:
+    action:
+      description: Action to perform, one of "exec" or "scan"
+      type: string
+      pattern: "exec|scan"
+    additional_args:
+      description: Additional CLI arguments to pass to boost cli
+      type: string
+    api_endpoint:
+      description: Boost Security API endpoint override
+      type: string
+    api_token:
+      description: Boost Security API token
+      type: string
+    cli_version:
+      description: Boost Security CLI version
+      type: string
+    exec_command:
+      description: Command to run when in exec mode
+      type: string
+    exec_full_repo:
+      description: Perform diff scans against a full repo without removing unchanged files
+      type: boolean
+    diff_scan_timeout:
+      description: Amount of seconds after which the diff scan should timeout and be considered failed
+      type: integer
+    docker_create_args:
+      description: Additional arguments to pass to the docker create step
+      type: string
+    project_slug:
+      description: Project unique name in the orgname/reponame form
+      type: string
+    scanner_image:
+      description: Boost Security scanner image url override
+      type: string
+    scanner_version:
+      description: Boost Security scanner version override
+      type: string
+    step_name:
+      description: Identifier for this scanner step
+      type: string
+  additionalProperties: false
+  required:
+    - api_token
