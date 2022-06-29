@@ -46,6 +46,7 @@ init.config ()
   export BOOST_EXEC_COMMAND=$(config.get "EXEC_COMMAND")
   export BOOST_EXEC_FULL_REPO=$(config.get "EXEC_FULL_REPO")
   export BOOST_GIT_PROJECT=$(config.get "PROJECT_SLUG")
+  export BOOST_IGNORE_FAILURE=$(config.get "IGNORE_FAILURE")
   export BOOST_STEP_NAME=$(config.get "STEP_NAME")
   export DOCKER_CREATE_ARGS=$(config.get "DOCKER_CREATE_ARGS")
 }
