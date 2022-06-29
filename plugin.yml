@@ -35,6 +35,9 @@ configuration:
     docker_create_args:
       description: Additional arguments to pass to the docker create step
       type: string
+    ignore_failure:
+      description: Do not fail the pipeline step on scan failure
+      type: boolean
     project_slug:
       description: Project unique name in the orgname/reponame form
       type: string

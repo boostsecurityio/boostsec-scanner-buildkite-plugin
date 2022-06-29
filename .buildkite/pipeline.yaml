@@ -1,8 +1,8 @@
 steps:
   - label: make lint
-    command: make lint
+    command: docker-compose run --rm lint
   - label: make test
-    command: make test
+    command: docker-compose run --rm tests
   - wait
   - label: ":pipeline: upload"
     command: .buildkite/pipeline.sh | buildkite-agent pipeline upload
