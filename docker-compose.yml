@@ -16,6 +16,6 @@ services:
       - ".:/plugin:rw"
 
   tests:
-    image: buildkite/plugin-tester
+    image: buildkite/plugin-tester:v2.0.0
     volumes:
       - ".:/plugin:ro"
