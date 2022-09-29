@@ -12,7 +12,7 @@ Add the following to your `pipeline.yml`:
 steps:
   - label: "BoostSecurity Scanner"
     plugins:
-      - boostsecurityio/boostsec-scanner#v3:
+      - boostsecurityio/boostsec-scanner#v1:
           api_token: 'TOKEN'
 ```
 
@@ -27,12 +27,6 @@ All pipeline options listed below may be configured either by specying the
 variables in your buildkite environment. All such environment variables should
 be capitalized and prefixed with either `BOOST` or
 `BUILDKITE_PLUGIN_BOOST_SECURITY_SCANNER`.
-
-### `action` (Required, string)
-
-The action to perform by the plugin:
-- `scan`: Executes the BoostSecurity native scanner with a number of plugins
-- `exec`: Executes a custom command which outputs Sarif to stdout.
 
 ### `additional_args` (Optional, string)
 
@@ -56,46 +50,11 @@ file. Intead, either expose the environment variable or refer to Builtkite's
 ### `cli_version` (Optional, string)
 
 Overrides the cli version to download when performing scans. If undefined,
-this will default to pulling "2.0".
+this will default to pulling "1".
 
-### `docker_create_args` (Optional, string)
+### `registry_module` (string)
 
-Optional additional arguments to pass to `docker create` when preparing the
-scanner container.
-
-### `exec_command` (Optional, string)
-
-A custom command to run in by the `exec` action. This should be a command which executes a custom scanner and outputs only a Sarif document to stdout.
-
-The value may additionally contain the `%CWD%` placeholder which will be replaced by the correct working directory during evaluation. The is especially useful when combined with volume mounts in a docker command.
-
-### `exec_full_scan` (Optional, boolean)
-
-By default, when performing a scan on a non-master branch, all files not having been modified as part of the PR will be deleted. This optimization may not always work for certain scanners. Enabling this option, will ensure that the `exec_command` runs against the full repository branch.
-
-### `diff_scan_timeout` (Optional, integer)
-
-Optional override indicating to the API how many seconds should be waited before failing the scan. This defaults to 120 seconds.
-
-### `project_slug` (Optional, string)
-
-Optional override for the project unique identifier. If undefined, this will
-default to the relative path derived from BUILDKITE\_REPO.
-
-### `scanner_image` (Optional, string)
-
-Overrides the docker image url to load when performing scans
-
-### `scanner_version` (Optional, string)
-
-Overrides the docker image tag to load when performing scans. If undefined,
-this will default to pulling the latest image from the current release channel.
-
-### `step_name` (Optional, string)
-
-Defines an identifier that differentiates findings uploaded by this specific
-step from other potential steps. This step is **required** when using the
-`exec` action.
+The relative path of a module within the [scanner registry](https://github.com/boostsecurityio/scanner-registry).
 
 ## Developing
 
