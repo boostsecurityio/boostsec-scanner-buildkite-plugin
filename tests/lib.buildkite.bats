@@ -6,7 +6,7 @@ setup ()
 
   PROJECT_ROOT=$(git rev-parse --show-toplevel)
 
-  export BOOST_MAIN_BRANCH="main" # do not attempt git ops
+  export BOOST_GIT_MAIN_BRANCH="main" # do not attempt git ops
 
   export SCRIPT_PATH=${PROJECT_ROOT}/lib
   # shellcheck disable=SC1091
@@ -74,12 +74,12 @@ teardown ()
   assert_equal "${BOOST_LOG_LEVEL}" "true"
 }
 
-@test "init.config.cli BOOST_MAIN_BRANCH defined" {
-  export BOOST_MAIN_BRANCH=""
+@test "init.config.cli BOOST_GIT_MAIN_BRANCH defined" {
+  export BOOST_GIT_MAIN_BRANCH=""
   export BUILDKITE_PLUGIN_BOOSTSEC_SCANNER_MAIN_BRANCH="true"
   init.config
 
-  assert_equal "${BOOST_MAIN_BRANCH}" "true"
+  assert_equal "${BOOST_GIT_MAIN_BRANCH}" "true"
 }
 
 @test "init.config.cli BOOST_PRE_SCAN defined" {

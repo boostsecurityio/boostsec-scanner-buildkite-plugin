@@ -27,8 +27,8 @@ init.config ()
          BOOST_CLI_URL=${BOOST_CLI_URL%*/}
   export BOOST_DOWNLOAD_URL=${BOOST_DOWNLOAD_URL:-${BOOST_CLI_URL}/boost-cli/get-boost-cli}
 
-  export BOOST_MAIN_BRANCH
-         BOOST_MAIN_BRANCH=${BOOST_MAIN_BRANCH:-$(git.ls_remote)}
+  export BOOST_GIT_MAIN_BRANCH
+         BOOST_GIT_MAIN_BRANCH=${BOOST_GIT_MAIN_BRANCH:-$(git.ls_remote)}
 
   init.ci.config
 }
@@ -43,7 +43,7 @@ init.ci.config ()
   config.export BOOST_CLI_VERSION CLI_VERSION
   config.export BOOST_IGNORE_FAILURE IGNORE_FAILURE
   config.export BOOST_LOG_LEVEL LOG_LEVEL
-  config.export BOOST_MAIN_BRANCH MAIN_BRANCH
+  config.export BOOST_GIT_MAIN_BRANCH MAIN_BRANCH
   config.export BOOST_PRE_SCAN PRE_SCAN_CMD
   config.export BOOST_SCANNER_REGISTRY_MODULE REGISTRY_MODULE
 }
