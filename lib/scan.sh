@@ -82,7 +82,7 @@ main.scan ()
   init.cli
 
   # shellcheck disable=SC2086
-  exec ${BOOST_EXE} scan repo ${BOOST_CLI_ARGUMENTS:-} HEAD
+  exec ${BOOST_EXE} scan repo ${BOOST_CLI_ARGUMENTS:-}
 }
 
 if [ "${0}" = "${BASH_SOURCE[0]}" ]; then
