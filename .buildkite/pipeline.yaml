@@ -1,12 +1,6 @@
 agents:
   - "queue=demo"
 steps:
-  - label: make lint
-    command: docker-compose run --rm lint
-  # TODO -- disable ci tests as the container is currently broken in dind
-  # https://github.com/bats-core/bats-core/issues/564
-  #- label: make test
-  #  command: docker-compose run --rm tests
   - wait
   - label: ":pipeline: upload"
     command: .buildkite/pipeline.sh | buildkite-agent pipeline upload

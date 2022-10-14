@@ -7,49 +7,44 @@ requirements:
   - mktemp
 configuration:
   properties:
-    action:
-      description: Action to perform, one of "exec" or "scan"
-      type: string
-      pattern: "exec|scan"
     additional_args:
-      description: Additional CLI arguments to pass to boost cli
+      description: "Additional CLI arguments to pass"
+      type: string
+    api_enabled:
+      description: "Optional setting to enable offline mode"
+      default: "true"
+      enum: ["true", "false"]
       type: string
     api_endpoint:
-      description: Boost Security API endpoint override
+      description: "Boost API endpoint"
+      default: https://api.boostsecurity.net
       type: string
     api_token:
-      description: Boost Security API token
+      description: "Boost API token"
       type: string
     cli_version:
-      description: Boost Security CLI version
-      type: string
-    exec_command:
-      description: Command to run when in exec mode
-      type: string
-    exec_full_repo:
-      description: Perform diff scans against a full repo without removing unchanged files
-      type: boolean
-    diff_scan_timeout:
-      description: Amount of seconds after which the diff scan should timeout and be considered failed
-      type: integer
-    docker_create_args:
-      description: Additional arguments to pass to the docker create step
+      description: "Scanner version"
+      default: "1"
       type: string
     ignore_failure:
-      description: Do not fail the pipeline step on scan failure
-      type: boolean
-    project_slug:
-      description: Project unique name in the orgname/reponame form
+      description: "Ignore any exception returned by the scanner cli"
+      default: "false"
+      enum: ["true", "false"]
       type: string
-    scanner_image:
-      description: Boost Security scanner image url override
+    log_level:
+      description: "Set the cli logging level"
+      enum: ["TRACE", "DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"]
       type: string
-    scanner_version:
-      description: Boost Security scanner version override
+    main_branch:
+      description: "Optional override for main branch detection"
       type: string
-    step_name:
-      description: Identifier for this scanner step
+    pre_scan_cmd:
+      description: "Optional command to run before scanning"
       type: string
+    registry_module:
+      description: "Module within the scanner registry to execute"
+      type: string
+    scan_timeout:
+      description: "Maximum amount of time a diff scan should complete in"
+      type: integer
   additionalProperties: false
-  required:
-    - api_token

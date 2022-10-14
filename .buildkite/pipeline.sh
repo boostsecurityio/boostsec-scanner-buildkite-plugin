@@ -14,5 +14,6 @@ steps:
   - label: "boostsecurity scanner"
     plugins:
       - ${PLUGIN_NAME}#${PLUGIN_VERSION}:
-          action: scan
+          api_enabled: "false"
+          registry_module: scanners/boostsecurityio/native-scanner
 EOF

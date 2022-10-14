@@ -1,15 +1,6 @@
 #!/bin/bash
 
 declare SELF
-        SELF="$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
-source "${SELF}/../lib/action.bash"
+SELF="$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
 
-declare BOOST_ACTION
-        BOOST_ACTION=$(config.get "ACTION")
-
-if [ -z "${BOOST_ACTION:-}" ]; then
-  log.error "the 'action' option must be one of 'scan', 'exec' or 'complete'"
-  log.error "assuming default 'action' of 'scan'"
-fi
-
-main
+"${SELF}/../lib/scan.sh"
