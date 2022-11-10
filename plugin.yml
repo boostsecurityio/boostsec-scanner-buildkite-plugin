@@ -17,7 +17,7 @@ configuration:
       type: string
     api_endpoint:
       description: "Boost API endpoint"
-      default: https://api.boostsecurity.net
+      default: https://api.boostsecurity.io
       type: string
     api_token:
       description: "Boost API token"
