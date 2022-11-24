@@ -2,7 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
-## Unreleased - [Github](https://github.com/boostsecurityio/boostsec-scanner-buildkite-plugin/compare/v4.0.1..HEAD)
+## Unreleased - [Github](https://github.com/boostsecurityio/boostsec-scanner-buildkite-plugin/compare/v4.0.2..HEAD)
+
+## v4.0.2 - 2022-10-24- [Github](https://github.com/boostsecurityio/boostsec-scanner-github/compare/v4.0.1...v4.0.2)
+
+- Add scanner\_id and scan\_label options
 
 ## v4.0.1 - 2022-10-05 - [Github](https://github.com/boostsecurityio/boostsec-scanner-buildkite-plugin/compare/v4.0.0...v4.0.1)
 

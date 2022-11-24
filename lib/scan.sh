@@ -45,6 +45,8 @@ init.ci.config ()
   config.export BOOST_LOG_LEVEL LOG_LEVEL
   config.export BOOST_GIT_MAIN_BRANCH MAIN_BRANCH
   config.export BOOST_PRE_SCAN PRE_SCAN_CMD
+  config.export BOOST_SCANNER_ID SCANNER_ID
+  config.export BOOST_SCAN_LABEL SCAN_LABEL
   config.export BOOST_SCANNER_REGISTRY_MODULE REGISTRY_MODULE
 }
 

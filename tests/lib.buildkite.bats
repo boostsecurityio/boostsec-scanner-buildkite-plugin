@@ -98,4 +98,20 @@ teardown ()
   assert_equal "${BOOST_SCANNER_REGISTRY_MODULE}" "true"
 }
 
+@test "init.config.cli BOOST_SCANNER_ID defined" {
+  export BOOST_SCANNER_ID=""
+  export BUILDKITE_PLUGIN_BOOSTSEC_SCANNER_ID="id"
+  init.config
+
+  assert_equal "${BOOST_SCANNER_ID}" "id"
+}
+
+@test "init.config.cli BOOST_SCAN_LABEL defined" {
+  export BOOST_SCAN_LABEL=""
+  export BUILDKITE_PLUGIN_BOOSTSEC_SCAN_LABEL="true"
+  init.config
+
+  assert_equal "${BOOST_SCAN_LABEL}" "label"
+}
+
 # vim: set ft=bash ts=2 sw=2 et :
