@@ -32,9 +32,6 @@ be capitalized and prefixed with either `BOOST` or
 
 Additional CLI args to pass to the `boost` cli.
 
-Optional arguments:
-- `--partial`: Enables partial mode, allowing you to combine the results of multiple scans.
-
 ### `api_endpoint` (Optional, string)
 
 Overrides the API endpoint url
@@ -55,6 +52,14 @@ this will default to pulling "1".
 ### `registry_module` (string)
 
 The relative path of a module within the [scanner registry](https://github.com/boostsecurityio/scanner-registry).
+
+### `scanner_id` (Optional, string)
+
+Optional identifier to uniquely identify the scanner
+
+### `scan_label` (Optional, string)
+
+Optional identifier to identify a a monorepo component
 
 ## Developing
 
