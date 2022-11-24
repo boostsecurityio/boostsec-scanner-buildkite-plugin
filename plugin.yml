@@ -44,6 +44,12 @@ configuration:
     registry_module:
       description: "Module within the scanner registry to execute"
       type: string
+    scanner_id:
+      description: "Optional identifier to uniquely identify the scanner"
+      type: string
+    scan_label:
+      description: "Optional identifier to identify a a monorepo component"
+      type: string
     scan_timeout:
       description: "Maximum amount of time a diff scan should complete in"
       type: integer
