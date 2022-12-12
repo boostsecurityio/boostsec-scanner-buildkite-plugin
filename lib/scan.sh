@@ -61,9 +61,11 @@ config.export ()
 { # $1=export, $2=key, [$3=default]
   declare value
   value=$(config.get "${2}" "${3:-}")
-  # shellcheck disable=SC2086
-  if [ -n "${value:-}" ]; then
-    export "${1}"="${value}"
+  if [ -z "${!1+x}" ]; then
+    # shellcheck disable=SC2086
+    if [ -n "${value:-}" ]; then
+      export "${1}"="${value}"
+    fi
   fi
 }
 
