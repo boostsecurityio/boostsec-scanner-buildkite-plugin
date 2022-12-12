@@ -78,6 +78,7 @@ init.cli ()
 
 main.scan ()
 {
+  set -x
   init.config
   init.cli
 
