@@ -61,6 +61,12 @@ Optional identifier to uniquely identify the scanner
 
 Optional identifier to identify a a monorepo component
 
+### `scan_path` (Optional, string)
+
+Optional path within the git repository to execute scanners in.
+
+When this parameter is specified, you must also provide a `scan_label` to identify the component.
+
 ## Developing
 
 To run the tests:

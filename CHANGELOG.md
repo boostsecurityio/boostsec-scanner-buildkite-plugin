@@ -2,7 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
-## Unreleased - [Github](https://github.com/boostsecurityio/boostsec-scanner-buildkite-plugin/compare/v4.0.3..HEAD)
+## Unreleased - [Github](https://github.com/boostsecurityio/boostsec-scanner-buildkite-plugin/compare/v4.0.4..HEAD)
+
+
+## v4.0.4 - 2023-02-10 - [Github](https://github.com/boostsecurityio/boostsec-scanner-github/compare/v4.0.3...v4.0.4)
+
+- Add scan\_path option
 
 ## v4.0.3 - 2022-10-24 - [Github](https://github.com/boostsecurityio/boostsec-scanner-github/compare/v4.0.2...v4.0.3)
 
