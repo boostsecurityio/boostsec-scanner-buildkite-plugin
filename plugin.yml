@@ -50,6 +50,9 @@ configuration:
     scan_label:
       description: "Optional identifier to identify a a monorepo component"
       type: string
+    scan_path:
+      description: "Optional path within the git repository to execute scanners in"
+      type: string
     scan_timeout:
       description: "Maximum amount of time a diff scan should complete in"
       type: integer
