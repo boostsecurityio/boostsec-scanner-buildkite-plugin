@@ -114,4 +114,12 @@ teardown ()
   assert_equal "${BOOST_SCAN_LABEL}" "label"
 }
 
+@test "init.config.cli BOOST_SCAN_PATH defined" {
+  export BOOST_SCAN_PATH=""
+  export BUILDKITE_PLUGIN_BOOSTSEC_SCAN_PATH="true"
+  init.config
+
+  assert_equal "${BOOST_SCAN_PATH}" "label"
+}
+
 # vim: set ft=bash ts=2 sw=2 et :
