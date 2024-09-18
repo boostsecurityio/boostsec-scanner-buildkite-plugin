@@ -14,5 +14,5 @@ steps:
   - label: "boostsecurity scanner"
     plugins:
       - ${PLUGIN_NAME}#${PLUGIN_VERSION}:
-          registry_module: scanners/boostsecurityio/native-scanner
+          registry_module: scanners/boostsecurityio/scanner
 EOF

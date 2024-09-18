@@ -122,4 +122,20 @@ teardown ()
   assert_equal "${BOOST_SCAN_PATH}" "label"
 }
 
+@test "init.config.cli BOOST_DIFF_SCAN_TIMEOUT defined" {
+  export BOOST_DIFF_SCAN_TIMEOUT=""
+  export BUILDKITE_PLUGIN_BOOSTSEC_SCAN_DIFF_TIMEOUT="123"
+  init.config
+
+  assert_equal "${BOOST_DIFF_SCAN_TIMEOUT}" "123"
+}
+
+@test "init.config.cli BOOST_MAIN_SCAN_TIMEOUT defined" {
+  export BOOST_MAIN_SCAN_TIMEOUT=""
+  export BUILDKITE_PLUGIN_BOOSTSEC_SCAN_MAIN_TIMEOUT="123"
+  init.config
+
+  assert_equal "${BOOST_MAIN_SCAN_TIMEOUT}" "123"
+}
+
 # vim: set ft=bash ts=2 sw=2 et :

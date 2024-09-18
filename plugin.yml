@@ -54,6 +54,13 @@ configuration:
       description: "Optional path within the git repository to execute scanners in"
       type: string
     scan_timeout:
+      description: "Maximum amount of time a diff scan should complete in (deprecated)"
+      type: integer
+    scan_diff_timeout:
       description: "Maximum amount of time a diff scan should complete in"
       type: integer
+    scan_main_timeout:
+      description: "Maximum amount of time a main scan should complete in"
+      type: integer
+
   additionalProperties: false
